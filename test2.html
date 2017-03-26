@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test2</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<style>
+	.btn img{
+		width: 50px;
+	}
+	#soopilt, #tee, .btn{
+		position: absolute;
+	}
+	#soopilt img{
+	position: relative;
+		height: 160px;
+		left: 500px;
+		top: 100px;
+	}
+	.slider{
+	position: absolute;
+	top: 400px;
+	}
+	</style>
+	<script>
+		$(document).ready(function () {
+		//täistuled
+			$(".btnIcon").click(function(){
+				if(!$(this).hasClass('play')){
+					$(this).attr('src', 'bt_ON.png');
+					$(this).addClass('play')
+					$('#tee>img').attr("src","road_highbeam.jpg");
+					console.log("Täistuled");
+				}else{
+					$(this).attr('src', 'bt_OFF.png');
+					$(this).removeClass('play')
+					$('#tee>img').attr("src","road_lowbeam.jpg");
+					console.log("Lähituled");
+				}
+			});
+
+		//Mees
+			$(".btnMees").click(function(){
+					$('#soopilt>img').attr("src","mees.png");
+					console.log("Mees");
+			});
+		//Naine
+			$(".btnNaine").click(function(){
+					$('#soopilt>img').attr("src","naine.png");
+					console.log("Naine");
+			});
+		//Laps
+			$(".btnLaps").click(function(){
+					$('#soopilt>img').attr("src","laps.png");
+					console.log("Laps");
+			});
+
+			//slider
+			 $( "#slider-vertical" ).slider({
+				  orientation: "vertical",
+				  range: "min",
+				  min: 0,
+				  max: 30,
+				  value: 15,
+				  slide: function( event, ui ) {
+					$( "#amount" ).val( ui.value );
+					//console.log($( "#amount" ).val());
+					var s = $( "#amount" ).val();
+					 $('#soopilt>img').css({'width' : s+'%' , 'height' : s+'%'});
+				  }
+				});
+				$( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+
+
+
+		 });
+
+	</script>
+</head>
+<body>
+<div id="content">
+	<div id="tee"><img src="road_lowbeam.jpg" alt="road_lowbeam.jpg"></div>
+	<div id="soopilt"><img src="mees.png" alt="mees.png"></div>
+</div>
+	<div class="btn">
+		<img class="btnIcon" src="bt_OFF.png">
+		<img class="btnMees" src="bt_OFF.png">
+		<img class="btnNaine" src="bt_OFF.png">
+		<img class="btnLaps" src="bt_OFF.png">
+	</div>
+<div class="slider">
+<p>
+  <label for="amount">Volume:</label>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+
+<div id="slider-vertical" style="height:200px;"></div>
+</div>
+</body>
+</html>

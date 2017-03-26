@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test1</title>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
+	<style>
+		#content{
+			width: 1144px;
+			height: 362px;
+			background-color: #000;
+		}
+
+		#roadLowBeam , #roadHighBeam {
+			left: 0;
+			top:0;
+			position: relative;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$(".default").hide();
+
+
+			$("#ON").click(function(){
+				$("#roadLowBeam>img").hide();
+				$("#roadHighBeam>img").show();
+
+				$(this).hide();
+				$("#OFF").show();
+				console.log("on");
+			});
+			$("#OFF").click(function(){
+				$("#roadLowBeam>img").show();
+				$("#roadHighBeam>img").hide();
+				$(this).hide();
+				$("#ON").show();
+				console.log("off");
+			});
+
+			/* $(".btnIcon").click(function(){
+			    if ($(this).attr("class") == "btnIcon") {
+			      this.src = this.src.replace("_OFF","_ON");
+			    } else {
+			      this.src = this.src.replace("_ON","_OFF");
+			    }
+			    $(this).toggleClass("ON");
+			  });*/
+		 });
+
+	</script>
+</head>
+<body>
+<div id="content">
+	<div id="roadLowBeam"><img src="road_lowbeam.jpg" alt="road_lowbeam.jpg"></div>
+	<div id="roadHighBeam" ><img src="road_highbeam.jpg" alt="road_highbeam.jpg" class="default"></div>
+
+</div>
+	<div class="btn">
+		<img id="ON" class="btnIcon" src="bt_ON.png">
+		<img id="OFF" class="btnIcon default" src="bt_OFF.png">
+	</div>
+
+		<div id="slider" style="left: 1361.5px; top: 93.6px; visibility: visible; opacity: 1;">
+			<div id="bgSlider" style="width: 20px; height: 250px; border-radius: 15px; box-shadow: rgb(0, 0, 0) 0px 0px 25px 2px;"></div>
+			<div id="btnSliderShadow" style="width: 40px; height: 40px; left: -10px; top: 220px; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.74902) 0px 0px 25px 2px;"></div>
+			<div id="txtDistance" style="font-size: 22px; width: 100px; left: -120px; top: 226px;">20 m</div>
+			<div id="btnSlider" class="btn" style="left: -10px; top: 220px; visibility: visible; opacity: 1;">
+				<img id="btnSliderImage" draggable="false" src="icon_slider.svg" style="width: 40px; height: 40px;">
+				<img id="btnSliderImageHilite"  draggable="false" style="width: 40px; height: 40px;" src="icon_slider_hilite.svg">
+			</div>
+			<div id="dragArea" style="width: 120px; height: 310px; left: -50px; top: -30px;"></div>
+			<div id="drag" style="width: 120px; height: 80px; left: -50px; top: 200px;" class="ui-draggable" aria-disabled="false"></div>
+		</div>
+</body>
+</html>
