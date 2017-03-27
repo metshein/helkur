@@ -76,6 +76,47 @@ body{
   user-select: none;
 }
 
+#titleStart, #titleInfo {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+
+	font-family: FrutigerLTW01-77BlackCn, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	color: #FFF100;
+	text-align: center;
+}
+
+#txtStart, #txtInfo {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-family: FrutigerLTW01-57Condens, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	color: #CCCCCC;
+	text-align: center;
+}
+
+#pedestrian {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+
+	visibility: hidden;
+}
+
+.pedestrianImage {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+
+	width: 80px;
+	height: 192px;
+	visibility: hidden;
+}
+
 
 
 /* Content dimensions */
