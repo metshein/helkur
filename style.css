@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    color: #ffffff;
 }
 ol, ul {
 	list-style: none;
@@ -100,4 +101,15 @@ body{
 	background-color:  #000000;
 	overflow: hidden;
 	visibility: hidden;
+}
+
+
+#valiRoll {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: hidden;
+    width: 200px;
+    height: 200px;
+    color: #fff;
 }
