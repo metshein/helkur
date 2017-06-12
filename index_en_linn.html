@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="et">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Haapsalu Kolledži praktika">
+    <meta name="author" content="Kirstin, Jaak, Mario">
+
+    <title>Kas sina oled nähtav?</title>
+
+    <!-- Bootstrap Core jQueryUI CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <!-- Front CSS -->
+    <link href="css/intro.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="css/app.css" rel="stylesheet">
+    <!-- DropDown CSS -->
+    <link rel="stylesheet" href="http://tigu.hk.tlu.ee/~jaak.rooden/2016/valikpraktika/dropdown2.css">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div id="widthCheck"></div>
+    <div id="heightCheck"></div>
+    <div id="ieerror" style="color:#fff;">Palun kasutage vähemalt InternetExplorer 9 või mõnda muud veebilehitsejat.</div>
+    <div id="intro">
+	<div id="place">
+            <a href="index.html"><img width="45px" src="img/maa.svg" class="img-swap" /></a>
+        </div>
+        <!-- Languages -->
+        <div id="languages">
+
+            <a href="index_linn.html"><button value="ee" class="lang shadowfilter">EE</button></a>
+            <a href="index_en_linn.html"><button value="ee" class="lang shadowfilter">EN</button></a>
+            <a href="index_ru_linn.html"><button value="ee" class="lang shadowfilter">RU</button></a>
+        </div>
+
+         <!-- Header -->
+        <header id="top" class="header city">
+            <div class="text-vertical-center">
+                <h1>ARE YOU VISIBLE?</h1>
+                <br>
+                <div class="row text-center">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <h2>Choose a user role:</h2>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="roll-item">
+                                    <span class="fa-stack fa-4x">
+                                <button value="man" type="button" class="btn btn-link roll" data-toggle="tooltip" data-placement="top" title="Man">
+				                    <img class="shadowfilter" src="img/mees.svg" alt="Mees">
+                                    </button>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="roll-item">
+                                    <span class="fa-stack fa-4x">
+                                <button value="woman" type="button" class="btn btn-link roll" data-toggle="tooltip" data-placement="top" title="Woman">
+				<img class="shadowfilter" src="img/naine.svg" alt="Naine"></button>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="roll-item">
+                                    <span class="fa-stack fa-4x">
+                                <button value="kid" type="button" class="btn btn-link roll" data-toggle="tooltip" data-placement="top" title="Child">
+				<img class="shadowfilter" src="img/laps.svg" alt="Laps"></button>
+
+                            </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row (nested) -->
+                    </div>
+                    <!-- /.col-lg-10 -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </header>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="https://www.mnt.ee/helkur/" target="blank"><img class="mnt" src="img/MNT.svg" alt="Maanteeamet"></a>
+                        <button id="trigger" value="info" type="button" class="btn2 btn-link info">
+            <svg class="shadowfilter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+                 width="45px" height="45px" viewBox="0 0 35 35" enable-background="new 0 0 35 35" xml:space="preserve">
+            <g>
+                <g>
+                    <path fill="#FFF200" d="M21.227,24.615l-0.256,1.046c-0.769,0.305-1.382,0.536-1.841,0.695c-0.458,0.159-0.991,0.239-1.597,0.239
+                        c-0.933,0-1.657-0.228-2.172-0.683c-0.517-0.454-0.776-1.031-0.776-1.729c0-0.273,0.021-0.55,0.058-0.832
+                        c0.039-0.283,0.102-0.605,0.186-0.962l0.962-3.402c0.086-0.33,0.159-0.635,0.217-0.927c0.059-0.292,0.087-0.558,0.087-0.799
+                        c0-0.436-0.088-0.738-0.27-0.908c-0.179-0.172-0.521-0.258-1.026-0.258c-0.25,0-0.505,0.039-0.767,0.116
+                        c-0.26,0.078-0.483,0.151-0.672,0.223l0.257-1.049c0.631-0.258,1.233-0.476,1.809-0.658c0.575-0.184,1.121-0.274,1.634-0.274
+                        c0.925,0,1.639,0.223,2.14,0.671c0.5,0.445,0.753,1.025,0.753,1.741c0,0.148-0.018,0.408-0.053,0.782
+                        c-0.034,0.373-0.097,0.715-0.191,1.025l-0.958,3.391c-0.079,0.272-0.149,0.583-0.21,0.933c-0.063,0.35-0.094,0.614-0.094,0.791
+                        c0,0.453,0.101,0.758,0.302,0.923c0.201,0.162,0.551,0.243,1.048,0.243c0.232,0,0.497-0.039,0.791-0.122
+                        C20.883,24.749,21.095,24.676,21.227,24.615z M21.473,10.385c0,0.59-0.224,1.095-0.671,1.509
+                        c-0.448,0.416-0.984,0.623-1.612,0.623c-0.632,0-1.171-0.208-1.621-0.623c-0.451-0.415-0.677-0.919-0.677-1.509
+                        c0-0.59,0.226-1.094,0.677-1.515c0.45-0.42,0.989-0.63,1.621-0.63c0.628,0,1.164,0.209,1.612,0.63
+                        C21.249,9.291,21.473,9.795,21.473,10.385z"/>
+                </g>
+                <circle fill="none" stroke="#FFF200" stroke-width="1.1468" stroke-miterlimit="10" cx="17.416" cy="17.418" r="16.583"/>
+            </g>
+            </svg> 
+		</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /Intro -->
+    <!-- App -->
+    <div id="content">
+        <!-- Buttons -->
+        <!--nav-->
+        <nav class="navbar navbar-default navbar-fixed-top" id="menyyriba">
+            <div class="container-fluid">
+                <!--Navbar Header Start Here-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MainNavBar" style="background-color:none">  
+                    <span class="icon-bar" style="background-color:#ffffff"></span>  
+                    <span class="icon-bar" style="background-color:#ffffff"></span>  
+                    <span class="icon-bar" style="background-color:#ffffff"></span>  
+                </button>
+                </div>
+                <!--Navbar Header End Here-->
+                <!--Menu Start Here-->
+                <div class="collapse navbar-collapse" id="MainNavBar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Weather<span class="caret"></span><img id="weatherIcon" src="img/ilm_kuiv.svg" class="pull-right" alt=""></a>
+                            <ul class="dropdown-menu" id="ilm">
+                                <li><a href="#" value="kuiv">Clear<img src="img/ilm_kuiv.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" value="sademed">Rain<img src="img/ilm_sademed.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" value="udu">Mist<img src="img/ilm_udu.svg" class="pull-right" alt=""></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">  
+                        Lights   <span class="caret"></span> <img id="beamIcon" src="img/tuled_lahi.svg" class="pull-right" alt="">
+                          
+                        </a>
+                            <ul class="dropdown-menu" id="tuled">
+                                <li class="lowbeam"><a href="#">Low beam<img src="img/tuled_lahi.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li class="highbeam"><a href="#">High beam<img src="img/tuled_kaug.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li class="nobeam"><a href="#">Lights off<img src="img/tuled_pole.svg" class="pull-right" alt=""></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">  
+                        Reflectors<span class="caret"></span><img id="reflectorIcon" src="img/helkur_pole.svg" class="pull-right" alt="">
+                        </a>
+                            <ul class="dropdown-menu" id="helkur">
+                                <li class="ripp"><a href="#">Hanging<img src="img/helkur_ripp.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li class="riba"><a href="#">Snapband<img src="img/helkur_riba.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li class="vest"><a href="#">Waistcoat<img src="img/helkur_vest.svg" class="pull-right" alt=""></a></li>
+                                <li class="divider"></li>
+                                <li class="puudub"><a href="#">None<img src="img/helkur_pole.svg" class="pull-right" alt=""></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--Menu End Here-->
+            </div>
+        </nav>
+        <!--<nav> tag end-->
+        <div id="controls">
+            <p id="minval"> </p>
+            <div id="slider-5"></div>
+        </div>
+
+
+        <!-- Header -->
+        <header class="car">
+            <div id="dashboard"><img id="dashboardImage" onload="checkLoadImage(id);" draggable="false" /></div>
+            <div id="pedestrian" class="character">
+                <img id="pedestrianRole" class="pedestrianImage" draggable="false" />
+                <img id="helkurImage" src="img/kid_lowbeam_puudub.png" alt="helkur">
+            </div>
+
+            <div class="weather" id="weather">
+                <img id="weatherImage" src="img/noweather.png" alt="">
+            </div>
+            <div id="lights" class="background">
+                <img id="cityLowBeamImage" src="img/city_lowbeam.jpg" alt="">
+            </div>
+        </header>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="https://www.mnt.ee/helkur/" target="blank"><img class="mnt" src="img/MNT.svg" alt="Maanteeamet"></a>
+                        <button type="button" class="btn btn-link back shadowfilter" data-toggle="tooltip" data-placement="top" title="Back">
+                <img src="img/back.png" alt="back">
+            </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /App -->
+    <!-- HIDDEN / POP-UP DIV -->
+    <div id="pop-up">
+        <h3>Lorem Ipsum</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod eleifend lobortis. Duis sodales quis nulla sed volutpat. Pellentesque hendrerit nisl id condimentum iaculis. Duis cursus eleifend odio vel consectetur. Donec pharetra congue neque, eu fermentum augue aliquam ac. Nunc felis purus, convallis at dapibus eu, varius quis ligula. Quisque purus metus, viverra at ex sit amet, convallis feugiat massa.
+        </p>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/app_city.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</body>
+
+</html>

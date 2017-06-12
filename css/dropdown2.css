@@ -1,0 +1,95 @@
+ *{font-family: 'Montserrat', sans-serif;}
+  .dropdown-menu .divider{
+    background-color: #FFED00;
+}
+.dropdown-toggle.btn-primary {
+    color: #FFED00;
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn .caret {
+    margin-left: 0;
+    display: none;
+}
+
+.btn {
+    font-family: "Montserrat", bold, sans-serif;
+    font-weight: bold;
+	padding: 20px;
+}
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #FFED00;
+    background-color: rgba(0,0,0,0) !important;
+    border-color: #000000;
+	padding: 20px;
+}
+.dropdown-menu>li>a {
+    font-family: "Montserrat", bold, sans-serif;
+    font-weight: bold;
+    color: #FFED00;
+   
+}
+body {
+background-color: #000000;
+}
+.dropdown-menu {
+background-color: transparent;
+border-radius: 1px;
+    min-width: 170px;
+border-color: #FFED00;
+box-shadow: none;
+border-width : 0px 1px 0px 1px ;
+background: url("../img/riba-02.svg") no-repeat center bottom;
+
+}
+.open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover
+{
+background-color: transparent;
+border-color: transparent;
+color: #FFED00;
+}
+svg {
+    display: block;
+    float: right;
+}
+a {
+    color: transparent;
+    text-decoration: none;
+	transition: all 0.3s ease-in;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown-menu>li>a {
+padding: 10px 20px;
+}
+
+
+
+
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #FFED00;
+    background-color: transparent;
+    border-color: transparent;
+}
+a:hover {
+ text-shadow: 0px 1px 10px yellow;
+ color: #ddd;
+ }
+ .dropdown-menu>li>a:hover {
+ color: #ccc;
+ }
+ .btn-primary:hover {
+ outline: none !important;
+ color: #ddd !important;
+ text-shadow: 0px 1px 10px yellow;
+ }
+ .dropdown-toggle.btn-primary:hover {
+ color: #ddd;
+ } 
+ 

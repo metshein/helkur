@@ -5,8 +5,8 @@
 
 var stageWidth = 0;
 var stageHeight = 0;
-var images = new Array("dashboardImage", "jaak", "roadLowBeamImage","cityLowBeamImage", "weatherImage");
-var imageFiles = new Array("dashboard2.png", "jaak.png", "road_lowbeam.jpg", "city.jpg", "noweather.png");
+var images = new Array("dashboardImage", "jaak", "roadLowBeamImage", "weatherImage");
+var imageFiles = new Array("dashboard2.png", "jaak.png", "road_lowbeam.jpg", "noweather.png");
 var imageLoaded = new Array();
 var cLoadImage = 0;
 var aLoading = 0;
@@ -16,10 +16,6 @@ var moveLeft = 20;
 var moveDown = -250;
 var sliderDefaultValue = 0;
 var beams = "";
-$('#intro').show();
-$('#content').hide();
-$('#ieerror').hide();
-var weather = "";
 
 
 
@@ -28,7 +24,6 @@ var origSizes = new Array();
 origSizes["dashboardImage"] = "1800x880";
 origSizes["pedestrian"] = "90x214";
 origSizes["roadLowBeamImage"] = "1144x362";
-origSizes["cityLowBeamImage"] = "1144x362";
 origSizes["weatherImage"] = "1200x463";
 
 /********** Piltide eellaadimine ***************/
@@ -81,7 +76,6 @@ $(".roll").click(function () {
     $("#lights").addClass("background");
     $('#content').show();
     $('#intro').hide();
-    $('#roadLowBeamImage').show();
 
     var s = -3;
     setPos("dashboard", 0.5 * (stageWidth - $("#dashboard").width()) + masterScale * xOffset, masterScale * yOffset);
@@ -90,9 +84,7 @@ $(".roll").click(function () {
     //piltVasakult = 0.45 * (stageWidth - masterScale * s * 90);
     show("pedestrian");
     setScale("roadLowBeamImage", masterScale * 1.3);
-    setScale("cityLowBeamImage", masterScale * 1.3);
     setPos("lights", 0.5 * (stageWidth - $("#lights").width()), masterScale * (110 + yOffset));
-    setPos("citylights", 0.5 * (stageWidth - $("#citylights").width()), masterScale * (110 + yOffset));
     setScale("weatherImage", masterScale * 1.2);
     setPos("weatherImage", 0.5 * (stageWidth - $("#weatherImage").width()), masterScale * (110 + yOffset));
 
@@ -121,7 +113,6 @@ function detect_browser() {
         $('#content').hide();
         $('#intro').hide();
         $('#ieerror').show();
-        $('#ieerror').css({'color':'#FFF100 !important'});
     } else {
         $('#ieerror').hide();
     }
@@ -168,14 +159,9 @@ function resizeHandler() {
     piltVasakult = 0.45 * (stageWidth - masterScale * s * 90);
 
     setScale("roadLowBeamImage", masterScale * 1.3);
-    setScale("cityLowBeamImage", masterScale * 1.3);
-
     setPos("lights", 0.5 * (stageWidth - $("#lights").width()), masterScale * (110 + yOffset));
-    setPos("citylights", 0.5 * (stageWidth - $("#citylights").width()), masterScale * (110 + yOffset));
     setScale("weatherImage", masterScale * 1.2);
     setPos("weatherImage", 0.5 * (stageWidth - $("#weatherImage").width()), masterScale * (110 + yOffset));
-    
-    
 }
 
 /********** Nupud ***************/
@@ -199,7 +185,7 @@ $(function () {
         value: 0,
         step: 1,
         slide: function (event, ui) {
-            $("#minval").html(Math.round(ui.value*1.5));
+            $("#minval").html(ui.value);
             $("#minval").append("m");
 
             //pildi muutmine
@@ -245,7 +231,9 @@ $(function () {
             } else {}
 
             sliderDefaultValue = ui.value;
+
         }
+
     });
 
     $("#minval").html($("#slider-5").slider("value"));
@@ -255,24 +243,16 @@ $(function () {
 /********** Ilmaolud ***************/
 $('#ilm li').on('click', function () {
     // console.log($(this).text());
-    weather = $(this).text();
-    if ($(this).text() == "Udu" || $(this).text() == "Mist" || $(this).text() == "Туман") {
+    if ($(this).text() == "Udu") {
         $('#weatherImage').attr("src", "img/mist.png");
         $('#weatherIcon').attr("src", "img/ilm_udu.svg");
-        $('#pedestrianRole').css({'filter': 'brightness(60%)'});
-        $('#lights img').css({'filter': 'brightness(50%)'});
-    } else if ($(this).text() == "Vihm" || $(this).text() == "Rain" || $(this).text() == "Дождь") {
+    } else if ($(this).text() == "Vihm") {
         $('#weatherImage').attr("src", "img/rain.png");
         $('#weatherIcon').attr("src", "img/ilm_sademed.svg");
-        $('#pedestrianRole').css({'filter': 'brightness(50%)'});
-        $('#lights img').css({'filter': 'brightness(50%)'});
-    } else if ($(this).text() == "Selge"  || $(this).text() == "Clear" || $(this).text() == "Ясно") {
+    } else if ($(this).text() == "Selge") {
         $('#weatherImage').attr("src", "img/noweather.png");
         $('#weatherIcon').attr("src", "img/ilm_kuiv.svg");
-        $('#pedestrianRole').css({'filter': 'brightness(100%)'});
-        $('#lights img').css({'filter': 'brightness(100%)'});
     }
-    console.log(weather);
 });
 
 /********** Tuled ***************/
@@ -342,12 +322,8 @@ $(function () {
     $(".img-swap").on('click', function () {
         if ($(this).attr("class") == "img-swap") {
             this.src = this.src.replace("maa", "linn");
-            $('#cityLowBeamImage').show();
-            $('#roadLowBeamImage').hide();
         } else {
             this.src = this.src.replace("linn", "maa");
-            $('#cityLowBeamImage').hide();
-            $('#roadLowBeamImage').show();
         }
         $(this).toggleClass("linn");
     });

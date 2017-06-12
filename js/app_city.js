@@ -6,7 +6,7 @@
 var stageWidth = 0;
 var stageHeight = 0;
 var images = new Array("dashboardImage", "jaak", "roadLowBeamImage","cityLowBeamImage", "weatherImage");
-var imageFiles = new Array("dashboard2.png", "jaak.png", "road_lowbeam.jpg", "city.jpg", "noweather.png");
+var imageFiles = new Array("dashboard2.png", "jaak.png", "road_lowbeam.jpg", "city_lowbeam.jpg", "noweather.png");
 var imageLoaded = new Array();
 var cLoadImage = 0;
 var aLoading = 0;
@@ -71,21 +71,21 @@ $(document).ready(function () {
 $(".roll").click(function () {
     $("#pedestrianRole").removeAttr('class');
     $("#pedestrianRole").addClass($(this).val());
-    $('#pedestrianRole').attr("src", "./img/" + $(this).val() + "_lowbeam.png");
+    $('#pedestrianRole').attr("src", "./img/" + $(this).val() + "_lowbeam_city.png");
     $('#helkurImage').attr("src", "img/kid_lowbeam_puudub.png");
     $('#reflectorIcon').attr("src", "img/helkur_pole.svg");
     $('#beamIcon').attr("src", "img/tuled_lowbeam.svg");
     beams = "lowbeam";
     $("#lights").removeAttr('class');
-    $('#roadLowBeamImage').attr("src", "img/road_lowbeam.jpg");
+    $('#cityLowBeamImage').attr("src", "img/city_lowbeam.jpg");
     $("#lights").addClass("background");
     $('#content').show();
     $('#intro').hide();
-    $('#roadLowBeamImage').show();
+    $('#cityLowBeamImage').show();
 
-    var s = -3;
+    var s = -4;
     setPos("dashboard", 0.5 * (stageWidth - $("#dashboard").width()) + masterScale * xOffset, masterScale * yOffset);
-    setPos("pedestrian", (0.45 * (stageWidth - masterScale * s * 90)) - sliderDefaultValue * 2, (masterScale * 167 + masterScale * yOffset - (1 - s) * masterScale * 162 + (1 - s) * masterScale * 192 + 50) + sliderDefaultValue);
+    setPos("pedestrian", (0.55 * (stageWidth - masterScale * s * 90)) - sliderDefaultValue * 10, (masterScale * 167 + masterScale * yOffset - (1 - s) * masterScale * 162 + (1 - s) * masterScale * 192 + 50) + sliderDefaultValue*2);
 
     //piltVasakult = 0.45 * (stageWidth - masterScale * s * 90);
     show("pedestrian");
@@ -121,7 +121,6 @@ function detect_browser() {
         $('#content').hide();
         $('#intro').hide();
         $('#ieerror').show();
-        $('#ieerror').css({'color':'#FFF100 !important'});
     } else {
         $('#ieerror').hide();
     }
@@ -161,11 +160,11 @@ function resizeHandler() {
     setScale("dashboardImage", masterScale);
     setPos("dashboard", 0.5 * (stageWidth - $("#dashboard").width()) + masterScale * xOffset, masterScale * yOffset);
 
-    var s = -3;
+    var s = -4;
 
-    setPos("pedestrian", (0.45 * (stageWidth - masterScale * s * 90)) - sliderDefaultValue * 2, (masterScale * 167 + masterScale * yOffset - (1 - s) * masterScale * 162 + (1 - s) * masterScale * 192 + 50) + sliderDefaultValue);
+    setPos("pedestrian", (0.55 * (stageWidth - masterScale * s * 90)) - sliderDefaultValue *10, (masterScale * 167 + masterScale * yOffset - (1 - s) * masterScale * 162 + (1 - s) * masterScale * 192 + 50) + sliderDefaultValue*2);
 
-    piltVasakult = 0.45 * (stageWidth - masterScale * s * 90);
+    piltVasakult = 0.55 * (stageWidth - masterScale * s * 90);
 
     setScale("roadLowBeamImage", masterScale * 1.3);
     setScale("cityLowBeamImage", masterScale * 1.3);
@@ -188,8 +187,8 @@ $(".back").click(function () {
 
 /********** Slider ***************/
 $(function () {
-    var s = -3;
-    var pildiVasakult = 0.45 * (stageWidth - masterScale * s * 90);
+    var s = -4;
+    var pildiVasakult = 0.55 * (stageWidth - masterScale * s * 90);
     var piltYlevalt = masterScale * 167 + masterScale * yOffset - (1 - s) * masterScale * 162 + (1 - s) * masterScale * 192 + 50;
     var uusVasak = 0;
     var uusYlevalt = 0;
@@ -203,7 +202,7 @@ $(function () {
             $("#minval").append("m");
 
             //pildi muutmine
-            var s = 100 - ui.value * 2;
+            var s = 100 - ui.value * 3;
             if (s >= 90) {
                 s = 90;
             }
@@ -212,10 +211,10 @@ $(function () {
                 'width': s + 'px',
                 'height': 'auto'
             });
-
+            
             $('#pedestrian').css({
-                'top': piltYlevalt + ui.value + 'px',
-                'left': piltVasakult - (ui.value * 2) + 'px'
+                'top': piltYlevalt + (ui.value*2) + 'px',
+                'left': piltVasakult - (ui.value*10) + 'px'
             });
 
             // console.log(beams);
@@ -274,28 +273,27 @@ $('#ilm li').on('click', function () {
     }
     console.log(weather);
 });
-
 /********** Tuled ***************/
 $('#tuled li').on('click', function () {
 
     $(".background").removeClass("nobeam");
     // console.log("Tuled: "+$(this).text());
     // console.log("Tuled: " + $(this).attr("class"));
-    $('.background>img').attr("src", "img/road_" + $(this).attr("class") + ".jpg");
+    $('.background>img').attr("src", "img/city_" + $(this).attr("class") + ".jpg");
     $('#beamIcon').attr("src", "img/tuled_" + $(this).attr("class") + ".svg");
     beams = $(this).attr("class");
     if ($("#pedestrianRole").hasClass("woman")) {
-        $('#pedestrianRole').attr("src", "img/woman_" + $(this).attr("class") + ".png");
+        $('#pedestrianRole').attr("src", "img/woman_" + $(this).attr("class") + "_city.png");
     }
     if ($("#pedestrianRole").hasClass("man")) {
-        $('#pedestrianRole').attr("src", "img/man_" + $(this).attr("class") + ".png");
+        $('#pedestrianRole').attr("src", "img/man_" + $(this).attr("class") + "_city.png");
     }
     if ($("#pedestrianRole").hasClass("kid")) {
-        $('#pedestrianRole').attr("src", "img/kid_" + $(this).attr("class") + ".png");
+        $('#pedestrianRole').attr("src", "img/kid_" + $(this).attr("class") + "_city.png");
     }
 
     if ($(this).attr("class") == "nobeam") {
-        $('#helkurImage').attr("src", "img/man_lowbeam_puudub.png");
+        //$('#helkurImage').attr("src", "img/man_lowbeam_puudub.png");
         $(".background").addClass($(this).attr("class"));
         $('#beamIcon').attr("src", "img/tuled_nobeam.svg");
         beams = "nobeam";
@@ -315,7 +313,6 @@ $('#tuled li').on('click', function () {
             'opacity': '1'
         });
     }
-
 });
 
 /********** Helkur ***************/
@@ -335,22 +332,6 @@ $('#helkur li').on('click', function () {
         }
         $('#reflectorIcon').attr("src", "img/helkur_" + $(this).attr("class") + ".svg");
     }
-});
-
-/********** Linn/Maa ***************/
-$(function () {
-    $(".img-swap").on('click', function () {
-        if ($(this).attr("class") == "img-swap") {
-            this.src = this.src.replace("maa", "linn");
-            $('#cityLowBeamImage').show();
-            $('#roadLowBeamImage').hide();
-        } else {
-            this.src = this.src.replace("linn", "maa");
-            $('#cityLowBeamImage').hide();
-            $('#roadLowBeamImage').show();
-        }
-        $(this).toggleClass("linn");
-    });
 });
 
 

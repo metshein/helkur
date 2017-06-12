@@ -1,0 +1,178 @@
+/* Global Styles */
+
+html,
+body,
+#intro {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+a,
+button,
+button.btn.btn-link.roll {
+    outline: none;
+}
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+    background-color: #FFF100;
+    display: inline-block;
+    padding: 10px;
+}
+
+.text-center h2 {
+    color: #FFF100;
+}
+
+@media only screen and (max-width: 760px) {
+    .text-vertical-center {
+        padding-top: 20px;
+    }
+    .text-vertical-center h1 {
+        font-size: 2.5em;
+    }
+}
+
+
+/* Button Styles */
+
+#languages {
+    z-index: 1;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+#place {
+    z-index: 1;
+    position: fixed;
+    top: 20px;
+    left: 30px;
+}
+
+.lang {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #FFF100;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 2px solid;
+    border-color: #FFF100;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+}
+
+.lang:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.shadowfilter:hover {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 60px;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 241, 0, 0.87);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(255, 241, 0, 0.87);
+    box-shadow: 0px 0px 30px 0px rgba(255, 241, 0, 0.87);
+}
+
+
+/* Header */
+
+.country {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg_country.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.city {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+
+/* Roll */
+
+.roll {
+    padding: 50px 0;
+}
+
+.roll-item {
+    margin-bottom: 30px;
+}
+
+
+/* Footer */
+
+footer {
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.mnt {
+    width: 125px;
+    height: 52px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.info {
+    display: block;
+    position: relative;
+    float: left;
+    top: 0px;
+}
+
+
+/* HOVER STYLES */
+
+#pop-up {
+    display: none;
+    position: absolute;
+    max-width: 280px;
+    padding: 10px;
+    background: none;
+    color: #FFED00;
+    border: 1px solid #FFED00;
+    border-width: 1px 1px 0px 1px;
+    background: url("../img/riba8.svg") no-repeat center bottom;
+    font-size: 90%;
+}

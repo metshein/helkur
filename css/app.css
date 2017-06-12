@@ -1,0 +1,367 @@
+/*
+    Mario Metshein, Kirstin Raudsepp, Jaak Rooden
+    Haapsalu Kolledž, koolipraktika 06.2017
+*/
+
+/**************************** Errors ****************************/
+
+#ieerror {
+    background-color: #000;
+    color: #000 !important;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+}
+
+
+/**************************** App style ****************************/
+
+body {
+    background-color: #000;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+#controls {
+    z-index: 1;
+    position: fixed;
+    top: 40%;
+    right: 5%;
+    margin-right: 30px;
+    margin-top: 100px;
+}
+
+#minval {
+    border: 0;
+    color: #FFF100;
+    font-weight: bold;
+    text-align: right;
+    width: 50px;
+}
+
+.navbar {
+    z-index: 1;
+    position: fixed;
+}
+
+.nupp {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #FFF100;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 2px solid;
+    border-color: #FFF100;
+}
+
+.nupp:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#menyyriba {
+    background-color: transparent;
+    border: 0px solid #000;
+}
+
+#menyyriba ul li a {
+    color: #ffffff;
+}
+
+.car {
+    width: 100%;
+    height: 100%;
+}
+
+
+#dashboard {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: hidden;
+    z-index: -8;
+}
+
+.character {
+    /* height: 100%;
+    width: 100%;*/
+    z-index: -9;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    /*background-color: yellow;*/
+}
+
+
+.background {
+    z-index: -11;
+}
+.citybackground {
+    z-index: -10;
+}
+
+
+.weather {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: -9;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#slider-5 {
+    height: 160px;
+    z-index: -8;
+    background: none;
+    border: 2px solid #FFF100;
+    float: right;
+    margin-right: 10%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#slider-5>span.ui-slider-handle.ui-corner-all.ui-state-default {
+    background: #FFF100;
+}
+
+span.ui-slider-handle.ui-corner-all.ui-state-default {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-left: -7px;
+    outline: none;
+}
+
+.ui-slider .ui-slider-handle {
+    width: 2em;
+    height: 2em;
+}
+
+#roadHighBeam,
+#lights,
+#citylights,
+#dashboard,
+#weatherLayer,
+#weatherImage{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+#roadHighBeamImage,
+#roadLowBeamImage,
+#cityLowBeamImage,
+#dashboardImage {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#btnHighBeam select,
+#btnHighBeam option,
+#btnWeather select,
+#btnWeather option,
+#btnReflector select,
+#btnReflector option {
+    height: 50px;
+    font-size: 20px;
+    background-color: #000;
+    color: yellow;
+    border: 1px solid yellow;
+    padding-left: 40px;
+    overflow: hidden;
+    text-align: right;
+}
+
+
+/*********** Content Dimensions ****************/
+
+#widthCheck {
+    position: fixed;
+    top: 1px;
+    left: 0px;
+    z-index: 999;
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#heightCheck {
+    position: fixed;
+    top: 0px;
+    left: 1px;
+    z-index: 998;
+    width: 1px;
+    height: 100%;
+    background-color: #000000;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+/**************************** Buttons ****************************/
+
+.btn {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+#btnHighBeam,
+#btnWeather,
+#btnReflector {
+    padding-top: 20px;
+}
+
+select {
+    line-height: 550px;
+}
+
+#btnHighBeam select>option,
+#btnWeather select>option,
+#btnReflector select>option {
+    height: 50px;
+    font-size: 20px;
+    background-color: #000;
+}
+
+#btnSettlement {
+    padding: 20px;
+}
+
+.back {
+    display: block;
+    position: relative;
+    float: left;
+    top: 0px;
+    padding: 0 !important;
+    margin: 0;
+    margin-left: 6px;
+}
+
+.back img {
+    width: 45px;
+    height: 45px;
+    outline:none;
+}
+
+#ilm,
+#tuled,
+#helkur {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav a {
+    color: #f9f607 !important;
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: #000 !important;
+    border-color: #f9f607;
+}
+
+img.pull-right {
+    margin-top: -6px;
+}
+
+
+/*************** Slider ********************/
+
+#btnSlider {
+    top: 100px;
+    left: 100px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    -webkit-transform: rotate(90deg);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 12px;
+    background: #000;
+    border: 1px solid #f9f607;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #000;
+    border: 3px solid #f9f607;
+    margin-top: -16px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #000;
+}
+
+#logoback {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    color: yellow;
+    padding-left: 10px;
+}
+
+/************* karakter ****************/
+
+#soopilt {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+#pedestrian {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -9;
+    visibility: visible;
+}
+
+.pedestrianImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 90px;
+    height: 214px;
+    visibility: visible;
+}
+
+#pedestrianRole,
+#helkurImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 90px;
+    height: 214px;
+    visibility: visible;
+}
+
